@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Hello World</title>
+  <script type="text/javascript" src="jquery-1.8.1.min.js"></script>
+  <script type="text/javascript" src="../BIOS/pnelop.js"></script>
+</head>
+<body>
+<script language="javascript">
+  var layoutPacket = {
+    layout: [{
+      widgets: {
+        helloWorld_header: {
+          jsobject: 'helloworld',
+          id: 'header',
+          process: 1,
+        },
+        helloWorld: {
+          jsobject: 'helloworld',
+          id: 'remote_content',
+          process: 2,
+        }
+      }
+    }]
+  };
+  
+  pnelopModules.helloworld = {
+    processObject: function(_layoutObj,_container)  {
+      if (_layoutObj.id=='header')
+        _container.prepend($('<div style=\'font-size:16pt;color:green;\'>PNelOP Web Framework - Header</div>'));
+
+      if (_layoutObj.id=='remote_content')
+        _container.prepend($('<div style=\'padding-top:20px;font-size:12pt;color:blue;\'>Web Framework - Page Content</div>'));
+    }
+  };
+  $P.bootBIOS(layoutPacket);
+</script>
+</body>
+</html>
