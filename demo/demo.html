@@ -26,10 +26,10 @@
   pnelopModules.helloworld = {
     processObject: function(_layoutObj,_container)  {
       if (_layoutObj.id=='HelloWorld_header')
-        _container.prepend($('<div style=\'font-size:16pt;color:green;\'>PNelOP Web Framework - Header</div>'));
+        _container.append($('<div style=\'font-size:16pt;color:green;\'>PNelOP Web Framework - Header</div>'));
 
       if (_layoutObj.id=='HelloWorld_content')
-        _container.prepend($('<div style=\'padding-top:20px;font-size:12pt;color:blue;\'>Web Framework - Page Content</div>'));
+        _container.append($('<div style=\'padding-top:20px;font-size:12pt;color:blue;\'>Web Framework - Page Content</div>'));
     }
   };
   $P.bootBIOS(layoutPacket);
