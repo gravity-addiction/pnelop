@@ -191,7 +191,7 @@ var PNelOP = (function ($) {
       },
       error: function(jqXHR, textStatus, errorThrown) {
         if (textStatus=='error' || textStatus=='timeout' || textStatus=='parseerror') {
-          rError('Ajax '+textStatus+': '+errorThrown);
+          _bootDebug('Ajax '+textStatus+': '+errorThrown);
         }
       },
       complete: function(jqXHR, textStatus) {
@@ -208,7 +208,7 @@ var PNelOP = (function ($) {
     $.xhrPool.abortAll = function() {
       var jqLength = $.xhrPool.length;
       for (i=0;i<jqLength;i++) {
-        try { if (!!$.xhrPool[i]) $.xhrPool[i].abort(); } catch(err) { rError('Abort Err: '+err); }
+        try { if (!!$.xhrPool[i]) $.xhrPool[i].abort(); } catch(err) { _bootDebug('Abort Err: '+err); }
       }
       $.xhrPool.splice(0,jqLength);
     };
