@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PNelOP Most Basic Demo</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script language="javascript" src="../BIOS/1.2/pnelop-1_2.min.js"></script>
+</head>
+<body>
+<script language="javascript">
+var mostBasic = {
+  ident: 'mostBasic',
+  onStart: function(tWidget,tContainer) {
+    tContainer.append('Writing Stuff to the Body');
+  },
+  onReady: function(tWidget,tContainer) {
+    tContainer.append('<br />Page Ready'); 
+  }
+};
+$P.bootWidget(mostBasic);
+</script>
+</body>
+</html>

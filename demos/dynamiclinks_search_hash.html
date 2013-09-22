@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PNelOP Dynamic Links</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script language="javascript" src="../BIOS/1.2/pnelop-1_2.min.js"></script>
+</head>
+<body>
+<script language="javascript">
+var mostBasicJSModule = {
+  ident: 'basicmodule',
+  module: 'basicmodule',
+  onStart: function(tWidget,tContainer) {
+    tContainer.append('Writing Stuff to the Body<br />');
+  },
+  onReady: function(tWidget,tContainer) {
+    tContainer.append('Widget Ready<br />');
+  },
+  js: ['extras/basic.js'],
+  onComplete: function(tWidget,tContainer) {
+    tContainer.append('Widget Loaded<br />');
+  }
+};
+
+// Attaching a Link Url
+//var aLink = $P.bootLink('dynamiclinks.html',function() { $P.bootWidget(mostBasicJSModule); });
+
+var aLink = $P.bootLink('#myHash',function() { $P.bootWidget(mostBasicJSModule,'basicmodule','#hashInfo'); });
+var bLink = $P.bootLink('dynamiclinks_search_hash.html?myHash',function() { $P.bootWidget(mostBasicJSModule,'basicmodule1','#searchInfo'); });
+</script>
+<a href="dynamiclinks_search_hash.html">Home</a>
+<a href="#myHash">My Hash</a>
+<a href="?myHash">My Search</a>
+<div id="hashInfo"></div>
+<div id="searchInfo"></div>
+</body>
+</html>

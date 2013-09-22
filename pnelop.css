@@ -1,0 +1,44 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: arial, arial;
+  font-size: 9pt;
+  padding: 0;
+  margin-bottom: 40px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  height:100%;
+  width:100%;
+}
+.mainPage {
+  clear: both;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2px;
+  padding-right: 2px;
+  overflow: hidden;
+}
+
+.mainPage .rightColumn {
+  float: right;
+  width: 272px;
+  margin-left: 15px;
+  padding: 8px 6px 0 0;
+  overflow: hidden;
+}
+.mainPage .leftColumn {
+  float: left;
+  width: 272px;
+  margin-right: 9px;
+  padding: 8px 6px 0 0;
+  overflow: hidden;
+}
+.mainPage .mainColumn {
+  margin: 0;
+  padding-top: 8px;
+  height: 1%;
+  overflow: hidden;
+}

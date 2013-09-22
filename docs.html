@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PNelOP Docs</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script language="javascript" src="pnelop.js"></script>
+<style type="text/css">
+.sideBar {
+  width: 180px;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.sideBar a {
+  color: black;
+  text-decoration: none;
+}
+
+.sideBar header {
+  font-size:12pt;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding:4px;
+  border-radius: 5px;
+  background-color:#66CCFF;
+}
+.sideBar article div {
+  display: block;
+  width: 165px;
+  font-size:10pt; 
+}
+.sideBar article div:nth-of-type(2) {
+  display: none;
+}
+.header-title {
+  font-size: 15pt;
+  font-weight: 800;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<script language="javascript">
+var scriptVersion='18';
+$P.bootLink('?setup',function() { $P.bootScript('setup.js?'+scriptVersion, function() { $P.bootWidget(setupJS,'SetupJS','.mainContainer'); } ); },function() { $('#setupJS').remove(); });
+
+$P.bootLink("?bootLayout",function() { $P.bootScript('widgets.js?'+scriptVersion, function() { $P.bootWidget(widgetDocsJS.bootLayoutJS,'bootLayoutJS','.mainContainer'); } ); }, function() { $('#widgetDocs').remove(); });
+
+$P.bootLink("?bootWidgets",function() { $P.bootScript('widgets.js?'+scriptVersion, function() { $P.bootWidget(widgetDocsJS.bootWidgetsJS,'bootWidgetsJS','.mainContainer'); } ); }, function() { $('#widgetDocs').remove(); });
+
+$P.bootLink("?bootWidget",function() { $P.bootScript('widgets.js?'+scriptVersion, function() { $P.bootWidget(widgetDocsJS.bootWidgetJS,'bootWidgetJS','.mainContainer'); } ); }, function() { $('#widgetDocs').remove(); });
+
+$P.bootLink("?fetchWidget",function() { $P.bootScript('widgets.js?'+scriptVersion, function() { $P.bootWidget(widgetDocsJS.fetchWidgetJS,'fetchWidgetJS','.mainContainer'); } ); }, function() { $('#widgetDocs').remove(); });
+
+$P.bootLink("?nukeWidget",function() { $P.bootScript('widgets.js?'+scriptVersion, function() { $P.bootWidget(widgetDocsJS.nukeWidgetJS,'nukeWidgetJS','.mainContainer'); } ); }, function() { $('#widgetDocs').remove(); });
+
+</script>
+
+<div class="sideBar">
+<div class="functionContainer">
+
+<div class="header-title">Functions</div>
+<article>
+  <div><a href="?setup" class="pushLink">setup</a></div>
+  <div>setup();<br />Runs Automatically</div>
+</article>
+<article>
+  <div><a href="?bootDebug" class="pushLink">bootDebug</a></div>
+  <div>bootDebug(Message);<br />Send Message to console</div>
+</article>
+
+<header>Widgets</header>
+<article>
+  <div><a href="?bootLayout" class="pushLink">bootLayout</a></div>
+  <div>bootLayout(layoutPacket);<br />
+  Boots Entire layout Scheme</div>
+</article>
+
+<article>
+  <div><a href="?bootWidgets" class="pushLink">bootWidgets</a></div>
+  <div>bootWidgets(widgetPackets);<br />Boots Multiple Widgets at once</div>
+</article>
+
+<article>
+  <div><a href="?bootWidget" class="pushLink">bootWidget</a></div>
+  <div>bootWidget(widgetPacket,widgetIdenty,widgetPlaceMarker);<br />Boots a Single Widget</div>
+</article>
+
+<article>
+  <div><a href="?fetchWidget" class="pushLink">fetchWidget</a></div>
+  <div>fetchWidget(widgetIdenty);<br />Fetch a Single Widget</div>
+</article>
+
+<article>
+  <div><a href="?nukeWidget" class="pushLink">nukeWidget</a></div>
+  <div>nukeWidget(widgetIdenty,RemovePlaceHolder,RemoveCacheData);<br />Unload a Single Widget</div>
+</article>
+
+<header>Modules</header>
+<article>
+  <div><a href="?bootModule" class="pushLink">bootModule</a></div>
+  <div>bootModule(ident,function,forceloading);</div>
+</article>
+
+
+<header>URL Links</header>
+<article>
+  <div><a href="?bootLink" class="pushLink">bootLink</a></div>
+  <div>bootLink(link url, action function(), [clean function()]);<Br />
+  _navLinks .. Runs Specific Actions on URL state<br />
+url - http://google.com/ full url<br />
+action - runs when initiated<br />
+clean - runs when nuked<br />
+returns linkID</div>
+</article>
+
+<article>
+  <div><a href="?nukeLink" class="pushLink">nukeLink</a></div>
+  <div>nukeLink(linkID);</div>
+</article>
+
+
+<header>Scripts</header>
+<article>
+  <div><a href="?bootScript" class="pushLink">bootScript</a></div>
+  <div>bootScript(url);<br />Loads Javascript</div>
+</article>
+
+<article>
+  <div><a href="?bootCSS" class="pushLink">bootCSS</a></div>
+  <div>bootCSS(url);<br />Loads CSS</div>
+</article>
+
+<article>
+  <div><a href="?nukeCSS" class="pushLink">nukeCSS</a></div>
+  <div>nukeCSS(url);<br />UnLoads CSS</div>
+</article>
+
+<header>URL History</header>
+<article>
+  <div><a href="?pushURL" class="pushLink">pushURL</a></div>
+  <div>pushURL(url);<br />Grab Page, and Update URL History</div>
+</article>
+
+<article>
+  <div><a href="?bootState" class="pushLink">bootState</a></div>
+  <div>bootState(loadURL,cleanURL);</div>
+</article>
+
+<article>
+  <div><a href="?fetchPage" class="pushLink">fetchPage</a></div>
+  <div>fetchPage(url);<br />Grab Page</div>
+</article>
+
+<article>
+  <div><a href="?loadLinks" class="pushLink">loadLinks</a></div>
+  <div>loadLinks(Selector);<br />Binds HTML5 History click to Selector Links. <br />Note: It unbinds any previous click events</div>
+</article>
+
+<header>Misc</header>
+<article>
+  <div><a href="?funQue" class="pushLink">$.funQue.add</a></div>
+  <div>$.funQue.add(function() { }, this);<br />Function Queue, add to next in list as processes are available</div>
+</article>
+
+<article>
+  <div><a href="?abortAll" class="pushLink">$.xhrPool.abortAll</a></div>
+  <div>$.xhrPool.abortAll();<br />Aborts all ajaxify calls</div>
+</article>
+
+
+<header>Content</header>
+<article>
+  <div><a href="?loadContainer" class="pushLink">loadContainer</a></div>
+  <div>loadContainer();<br />Returns jQuery html div object #pageContainer</div>
+</article>
+<article>
+  <div><a href="?layoutMain" class="pushLink">layoutMain</a></div>
+  <div>layoutMain();<br />Returns html for basic three column setup. #mainPage -> #rightColumn, #leftColumn, #mainColumn</div>
+</article>
+
+</div>
+
+
+<div class="demoContainer">
+<div class="header-title">Demos</div>
+<article>
+  <div><a href="demos/basic.html" target="_blank">basic.html</a></div>
+</article>
+<article>
+  <div><a href="demos/basic_with_js.html" target="_blank">basic_with_js.html</a></div>
+</article>
+
+<article>
+  <div><a href="demos/basic_with_js_module.html" target="_blank">basic_with_js_module.html</a></div>
+  <div class="htmlcode" id="basic_html_with_js_module" style="display:none;"><pre><code></code></pre></div>
+</article>
+
+<article>
+  <div><a href="demos/dynamiclinks.html" target="_blank">dynamiclinks.html</a></div>
+  <div class="htmlcode" id="dynamiclinks" style="display:none;"><pre><code></code></pre></div>
+</article>
+
+<article>
+  <div><a href="demos/dynamiclinks_search_hash.html" target="_blank">dynamiclinks_search_hash.html</a></div>
+  <div class="htmlcode" id="dynamiclinks_search_hash" style="display:none;"><pre><code></code></pre></div>
+</article>
+
+<article>
+  <div><a href="demos/dynamiclinks_search_hash_pushlink.html" target="_blank">dynamiclinks_search_hash_pushlink.html</a></div>
+  <div class="htmlcode" id="dynamiclinks_search_hash_pushlink" style="display:none;"><pre><code></code></pre></div>
+</article>
+</div>
+
+</div>
+
+<div class="mainContainer">
+
+</div>
+
+
+</body>
+</html>
