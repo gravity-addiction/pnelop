@@ -1,0 +1,28 @@
+{
+    "name": "pnelop",
+    "title": "PNelOP BIOS",
+    "description": "PNelOP BIOS Dynamically Loads Javascript / CSS and Unloads CSS",
+    "keywords": [
+        "pnelop"
+    ],
+    "version": "1.2.0",
+    "author": {
+        "name": "Gary Taylor"
+    },
+    "maintainers": [
+        {
+            "name": "Gary Taylor",
+            "email": "gravity.addiction@gmail.com",
+            "url": "http://pnelop.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "GNU",
+            "url": "https://github.com/gravity-addiction/pnelop/blob/master/LICENSE"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
